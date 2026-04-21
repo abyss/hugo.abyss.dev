@@ -1,0 +1,178 @@
+backend:
+  name: github
+  repo: abyss/hugo.abyss.dev
+  branch: main
+
+
+media_folder: static/images/uploads
+public_folder: /images/uploads
+
+site_url: https://hugo.abyss.dev
+display_url: https://hugo.abyss.dev
+
+collections:
+  # ── Blog Posts ──
+  - name: posts
+    label: Blog Posts
+    label_singular: Blog Post
+    folder: content/blog
+    create: true
+    slug: "{{slug}}"
+    filter:
+      field: _index
+      value: false
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        required: true
+      - label: Publish Date
+        name: date
+        widget: datetime
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        required: true
+      - label: Draft
+        name: draft
+        widget: boolean
+        default: false
+      - label: Description
+        name: description
+        widget: text
+        required: false
+        hint: Short excerpt shown in blog listing and meta tags
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
+        hint: Comma-separated tags (e.g. psychology, performance)
+      - label: Body
+        name: body
+        widget: markdown
+        required: true
+
+  # ── Shows ──
+  - name: shows
+    label: Shows
+    label_singular: Show
+    folder: content/shows
+    create: true
+    slug: "{{slug}}"
+    filter:
+      field: _index
+      value: false
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        required: true
+      - label: Description
+        name: description
+        widget: text
+        required: false
+        hint: Short description shown on the shows listing page
+      - label: Icon (Emoji)
+        name: icon
+        widget: string
+        required: false
+        hint: A single emoji to represent this show type
+        default: "✦"
+      - label: Duration
+        name: duration
+        widget: string
+        required: false
+        hint: e.g. 60–90 minutes
+      - label: Price Range
+        name: price_range
+        widget: string
+        required: false
+        hint: e.g. From £3,500
+      - label: Audience Size
+        name: audience_size
+        widget: string
+        required: false
+        hint: e.g. 20–500+
+      - label: Display Order
+        name: weight
+        widget: number
+        default: 10
+        required: false
+      - label: Body
+        name: body
+        widget: markdown
+        required: true
+
+  # ── Testimonials ──
+  - name: testimonials
+    label: Testimonials
+    label_singular: Testimonial
+    folder: content/testimonials
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: Name
+        name: name
+        widget: string
+        required: true
+      - label: Title / Role
+        name: title
+        widget: string
+        required: false
+        hint: e.g. Head of Events
+      - label: Company / Organisation
+        name: company
+        widget: string
+        required: false
+      - label: Quote
+        name: quote
+        widget: text
+        required: true
+      - label: Display Order
+        name: weight
+        widget: number
+        default: 10
+        required: false
+
+  # ── Site Settings ──
+  - name: settings
+    label: Site Settings
+    files:
+      - label: General Settings
+        name: general
+        file: content/settings.md
+        fields:
+          - label: Site Title
+            name: site_title
+            widget: string
+            default: Victor Ashveil
+          - label: Tagline
+            name: tagline
+            widget: string
+            default: Beyond the Veil of Possibility
+          - label: Hero Subtitle
+            name: hero_subtitle
+            widget: string
+            hint: Shown beneath the tagline on the home hero
+          - label: Contact Email
+            name: email
+            widget: string
+          - label: Contact Phone
+            name: phone
+            widget: string
+          - label: Formspree Form ID
+            name: formspree_id
+            widget: string
+            hint: The ID from your Formspree form URL
+          - label: Instagram URL
+            name: social_instagram
+            widget: string
+            required: false
+          - label: Facebook URL
+            name: social_facebook
+            widget: string
+            required: false
+          - label: YouTube URL
+            name: social_youtube
+            widget: string
+            required: false

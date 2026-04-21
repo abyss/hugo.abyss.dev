@@ -1,0 +1,59 @@
+baseURL = "https://hugo.abyss.dev/"
+languageCode = "en-us"
+title = "Victor Ashveil"
+# Set to true in production (requires git history); keep false for non-git local dev
+enableGitInfo = false
+enableRobotsTXT = true
+
+[minify]
+  minifyOutput = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "dracula"
+    noClasses = false
+
+[params]
+  description = "Victor Ashveil — Master Mentalist & Illusionist. Extraordinary performances for corporate events, private gatherings, and stage shows."
+  tagline = "Beyond the Veil of Possibility"
+  hero_subtitle = "Master Mentalist & Illusionist performing worldwide since 2001"
+  email = "booking@victorashveil.com"
+  phone = "+1 (555) 000-0000"
+  formspree_id = "YOUR_FORMSPREE_ID"
+  social_instagram = "https://instagram.com/"
+  social_facebook = "https://facebook.com/"
+  social_youtube = "https://youtube.com/"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+  [[menu.main]]
+    name = "Shows"
+    url = "/shows/"
+    weight = 3
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 4
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 5
+
+[outputs]
+  home = ["HTML"]
+  page = ["HTML"]
+  section = ["HTML"]
+
+[permalinks]
+  blog = "/blog/:slug/"
+  shows = "/shows/:slug/"

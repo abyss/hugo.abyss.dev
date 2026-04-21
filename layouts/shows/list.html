@@ -1,0 +1,83 @@
+{{ define "main" }}
+
+<!-- Hero -->
+<section class="relative pt-40 pb-20 px-6 overflow-hidden">
+  <div class="stars-bg"></div>
+  <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(74,29,150,0.2) 0%, transparent 70%);"></div>
+  <div class="max-w-4xl mx-auto relative z-10 text-center">
+    <p class="section-label mb-5 reveal">Performances</p>
+    <h1 class="font-cormorant font-light text-white mb-4 reveal reveal-delay-1" style="font-size: clamp(3rem, 7vw, 5rem); line-height: 0.95;">
+      The Shows
+    </h1>
+    <p class="font-cormorant italic text-mist-light reveal reveal-delay-2" style="font-size: 1.25rem;">
+      Tailored experiences for every stage and setting
+    </p>
+    <div class="divider-gold mt-8 max-w-xs mx-auto reveal reveal-delay-3"></div>
+  </div>
+</section>
+
+<!-- Shows grid -->
+<section class="py-20 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {{ range .Pages }}
+      <article class="card-dark group overflow-hidden reveal">
+        <div class="p-10">
+          <!-- Icon -->
+          <div class="show-icon mb-6">{{ with .Params.icon }}{{ . }}{{ else }}✦{{ end }}</div>
+
+          <h2 class="font-cormorant text-3xl font-light text-white mb-3 group-hover:text-gold-light transition-colors duration-300">
+            {{ .Title }}
+          </h2>
+
+          {{ with .Description }}
+          <p class="font-inter text-sm text-mist leading-relaxed mb-6">{{ . }}</p>
+          {{ end }}
+
+          <!-- Meta row -->
+          <div class="flex flex-wrap gap-6 mb-8">
+            {{ with .Params.duration }}
+            <div>
+              <p class="font-inter text-xs tracking-widest uppercase text-gold mb-1">Duration</p>
+              <p class="font-inter text-sm text-mist-light">{{ . }}</p>
+            </div>
+            {{ end }}
+            {{ with .Params.price_range }}
+            <div>
+              <p class="font-inter text-xs tracking-widest uppercase text-gold mb-1">Investment</p>
+              <p class="font-inter text-sm text-mist-light">{{ . }}</p>
+            </div>
+            {{ end }}
+          </div>
+
+          <a href="{{ .RelPermalink }}" class="btn-outline text-xs py-2.5 px-5">
+            Show Details
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+
+        <!-- Bottom accent line -->
+        <div class="h-px w-0 group-hover:w-full transition-all duration-700" style="background: linear-gradient(90deg, var(--gold), transparent);"></div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 px-6 text-center" style="background: var(--bg-surface);">
+  <div class="divider-gold mb-0"></div>
+  <div class="max-w-2xl mx-auto py-16">
+    <p class="section-label mb-4 reveal">Bespoke Engagements</p>
+    <h2 class="font-cormorant font-light text-white mb-6 reveal reveal-delay-1" style="font-size: clamp(2rem, 4vw, 3rem);">
+      Don't see what you're looking for?
+    </h2>
+    <p class="font-inter text-sm text-mist mb-8 reveal reveal-delay-2">
+      Victor collaborates with event planners and individuals to create fully bespoke performances — from intimate parlour shows to large-scale theatrical productions.
+    </p>
+    <a href="/contact/" class="btn-primary reveal reveal-delay-3">Discuss Your Vision</a>
+  </div>
+  <div class="divider-gold"></div>
+</section>
+
+{{ end }}
