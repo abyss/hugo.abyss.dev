@@ -3,7 +3,7 @@ title: "The Psychology Behind Misdirection"
 date: 2024-03-15
 description: "Why your brain actively collaborates in being deceived — and what that reveals about consciousness itself"
 tags: ["psychology", "performance", "theory"]
-draft: false
+draft: true
 ---
 
 There is a moment in every performance when I do something completely in plain sight — unhurried, unobscured — and nobody sees it. Not because I'm fast. Not because I'm hidden. Because I've arranged the situation so that your brain has decided, on your behalf, that what I'm doing is not worth registering.

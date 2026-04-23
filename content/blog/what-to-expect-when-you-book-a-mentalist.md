@@ -3,7 +3,7 @@ title: "What to Expect When You Book a Mentalist"
 date: 2024-05-02
 description: "A practical guide for event planners and private clients — from the first email to the standing ovation"
 tags: ["booking", "guide", "events"]
-draft: false
+draft: true
 ---
 
 If you've never hired a mentalist before, the booking process can feel slightly mysterious — which, I suppose, is appropriate. Here is what to expect at each stage, so you can approach the process with confidence.

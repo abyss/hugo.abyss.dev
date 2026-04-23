@@ -13,7 +13,7 @@
     <!-- Pre-title -->
     <div class="flex items-center justify-center gap-4 mb-8 opacity-0 animate-fade-in" style="animation-delay:0.2s; animation-fill-mode: forwards;">
       <span class="w-12 h-px" style="background: linear-gradient(90deg, transparent, rgba(212,160,23,0.5));"></span>
-      <span class="section-label">Master Mentalist &amp; Illusionist</span>
+      <span class="section-label">{{ .Site.Params.header_subtitle }}</span>
       <span class="w-12 h-px" style="background: linear-gradient(90deg, rgba(212,160,23,0.5), transparent);"></span>
     </div>
 
@@ -47,23 +47,20 @@
 <!-- ── INTRO ── -->
 <section class="relative py-28 px-6 overflow-hidden">
   <div class="max-w-4xl mx-auto text-center">
-    <p class="section-label mb-6 reveal">The Experience</p>
+    <p class="section-label mb-6 reveal">{{ .Params.intro_label }}</p>
     <h2 class="font-cormorant font-light text-white mb-8 reveal reveal-delay-1" style="font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.1;">
-      Where psychology meets<br><em class="text-gold-gradient">the inexplicable</em>
+      {{ .Params.intro_heading }}<br><em class="text-gold-gradient">{{ .Params.intro_heading_em }}</em>
     </h2>
     <div class="ornament mb-8 reveal reveal-delay-2">
-      <span class="font-cormorant italic text-gold opacity-50">&#10022;</span>
+      <span class="font-cormorant not-italic text-gold opacity-50">&#10022;</span>
     </div>
-    <p class="font-inter text-base leading-relaxed text-mist mb-6 reveal reveal-delay-2" style="max-width: 640px; margin-left: auto; margin-right: auto;">
-      For over two decades, Victor Ashveil has commanded stages and boardrooms alike, turning skeptics into believers through feats of psychological insight, memory mastery, and theatrical illusion. Not tricks — experiences that linger long after the evening ends.
-    </p>
-    <p class="font-inter text-base leading-relaxed text-mist reveal reveal-delay-3" style="max-width: 640px; margin-left: auto; margin-right: auto;">
-      His performances draw on disciplines from cognitive psychology and behavioral science to classical sleight of hand — crafted into seamless, elegant theatre that feels as intimate as a secret shared between two people, even when performed for five hundred.
-    </p>
+    <div class="font-inter text-base leading-relaxed text-mist reveal reveal-delay-2 intro-content" style="max-width: 640px; margin-left: auto; margin-right: auto;">
+      {{ .Content }}
+    </div>
     <div class="mt-12 reveal reveal-delay-4">
       <a href="/about/" class="btn-ghost">
         Discover Victor's story
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        {{ partial "icons/arrow-right" (dict "class" "w-4 h-4") }}
       </a>
     </div>
   </div>
@@ -75,49 +72,24 @@
     <div class="text-center mb-16">
       <p class="section-label mb-4 reveal">Performances</p>
       <h2 class="font-cormorant font-light text-white reveal reveal-delay-1" style="font-size: clamp(2rem, 4vw, 3rem);">
-        Every occasion, reimagined
+        {{ .Params.shows_heading }}
       </h2>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- Card 1 -->
-      <article class="card-dark p-8 reveal">
-        <div class="show-icon mb-6">🏢</div>
-        <h3 class="font-cormorant text-2xl font-light text-white mb-3">Corporate Events</h3>
-        <p class="font-inter text-sm text-mist leading-relaxed mb-6">
-          Transform conferences, product launches, and awards evenings into unforgettable spectacles. Victor's mind-reading segments spark conversation that outlasts the event.
-        </p>
-        <a href="/shows/corporate-events/" class="btn-ghost text-xs">
+      {{ range first 3 (sort (where .Site.RegularPages "Section" "shows") "Params.weight") }}
+      <article class="card-dark p-8 reveal{{ if gt .Params.weight 1 }} reveal-delay-{{ sub .Params.weight 1 }}{{ end }}">
+        <div class="show-icon mb-6">{{ with .Params.icon }}{{ . }}{{ else }}✦{{ end }}</div>
+        <h3 class="font-cormorant text-2xl font-light text-white mb-3">{{ .Title }}</h3>
+        {{ with .Description }}
+        <p class="font-inter text-sm text-mist leading-relaxed mb-6">{{ . }}</p>
+        {{ end }}
+        <a href="{{ .RelPermalink }}" class="btn-ghost text-xs">
           Learn more
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          {{ partial "icons/arrow-right" (dict "class" "w-3.5 h-3.5") }}
         </a>
       </article>
-
-      <!-- Card 2 -->
-      <article class="card-dark p-8 reveal reveal-delay-2">
-        <div class="show-icon mb-6">🎭</div>
-        <h3 class="font-cormorant text-2xl font-light text-white mb-3">Stage Shows</h3>
-        <p class="font-inter text-sm text-mist leading-relaxed mb-6">
-          A full-evening theatrical experience: two acts of psychological illusion, audience participation, and moments that defy rational explanation. Available for theatres &amp; festivals.
-        </p>
-        <a href="/shows/stage-shows/" class="btn-ghost text-xs">
-          Learn more
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </a>
-      </article>
-
-      <!-- Card 3 -->
-      <article class="card-dark p-8 reveal reveal-delay-3">
-        <div class="show-icon mb-6">🥂</div>
-        <h3 class="font-cormorant text-2xl font-light text-white mb-3">Private Parties</h3>
-        <p class="font-inter text-sm text-mist leading-relaxed mb-6">
-          Intimate close-up mentalism for milestone celebrations, dinner parties, and exclusive gatherings. Victor moves through your event leaving each guest with something to wonder about.
-        </p>
-        <a href="/shows/private-parties/" class="btn-ghost text-xs">
-          Learn more
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </a>
-      </article>
+      {{ end }}
     </div>
 
     <div class="text-center mt-10 reveal">
@@ -133,46 +105,23 @@
     <div class="text-center mb-16">
       <p class="section-label mb-4 reveal">Testimonials</p>
       <h2 class="font-cormorant font-light text-white reveal reveal-delay-1" style="font-size: clamp(2rem, 4vw, 3rem);">
-        What audiences say
+        {{ .Params.testimonials_heading }}
       </h2>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- Quote 1 -->
-      <blockquote class="card-dark p-8 flex flex-col reveal">
+      {{ range $i, $t := hugo.Data.testimonials }}
+      <blockquote class="card-dark p-8 flex flex-col reveal{{ if gt $i 0 }} reveal-delay-{{ mul $i 2 }}{{ end }}">
         <div class="quote-mark mb-2">&ldquo;</div>
         <p class="font-cormorant text-xl font-light italic text-mist-light leading-relaxed flex-1 mb-6">
-          Victor had our entire executive team convinced he had read their minds. Three months later people are still talking about it.
+          {{ $t.quote }}
         </p>
         <footer>
-          <p class="font-inter text-sm font-medium" style="color: var(--gold-light);">Sarah Mitchell</p>
-          <p class="font-inter text-xs text-mist mt-0.5">Head of Events, Meridian Capital</p>
+          <p class="font-inter text-sm font-medium" style="color: var(--gold-light);">{{ $t.name }}</p>
+          <p class="font-inter text-xs text-mist mt-0.5">{{ $t.role }}</p>
         </footer>
       </blockquote>
-
-      <!-- Quote 2 -->
-      <blockquote class="card-dark p-8 flex flex-col reveal reveal-delay-2">
-        <div class="quote-mark mb-2">&ldquo;</div>
-        <p class="font-cormorant text-xl font-light italic text-mist-light leading-relaxed flex-1 mb-6">
-          I've seen dozens of performers. Victor is in a category of his own — the intimacy he creates with five hundred strangers is genuinely extraordinary.
-        </p>
-        <footer>
-          <p class="font-inter text-sm font-medium" style="color: var(--gold-light);">James Thornton</p>
-          <p class="font-inter text-xs text-mist mt-0.5">Festival Director, The Arthouse Series</p>
-        </footer>
-      </blockquote>
-
-      <!-- Quote 3 -->
-      <blockquote class="card-dark p-8 flex flex-col reveal reveal-delay-3">
-        <div class="quote-mark mb-2">&ldquo;</div>
-        <p class="font-cormorant text-xl font-light italic text-mist-light leading-relaxed flex-1 mb-6">
-          He knew things about our guests that he simply could not have known. Elegant, intelligent, and utterly baffling. The perfect addition to our evening.
-        </p>
-        <footer>
-          <p class="font-inter text-sm font-medium" style="color: var(--gold-light);">Elena Voss</p>
-          <p class="font-inter text-xs text-mist mt-0.5">Private Client, Vienna</p>
-        </footer>
-      </blockquote>
+      {{ end }}
     </div>
   </div>
 </section>
@@ -185,10 +134,10 @@
   <div class="max-w-3xl mx-auto text-center relative z-10">
     <p class="section-label mb-6 reveal">Availability</p>
     <h2 class="font-cormorant font-light text-white mb-6 reveal reveal-delay-1" style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.05;">
-      Ready to create something<br><em class="text-gold-gradient">unforgettable?</em>
+      {{ .Params.cta_heading }}<br><em class="text-gold-gradient">{{ .Params.cta_heading_em }}</em>
     </h2>
     <p class="font-inter text-base text-mist mb-10 reveal reveal-delay-2" style="max-width: 480px; margin-left: auto; margin-right: auto;">
-      Victor books a limited number of performances each year to ensure every event receives his full creative attention. Enquire early to secure your date.
+      {{ .Params.cta_body }}
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center reveal reveal-delay-3">
       <a href="/contact/" class="btn-primary">Book Victor</a>

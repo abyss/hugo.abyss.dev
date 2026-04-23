@@ -5,12 +5,12 @@
   <div class="stars-bg"></div>
   <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(74,29,150,0.18) 0%, transparent 70%);"></div>
   <div class="max-w-4xl mx-auto relative z-10 text-center">
-    <p class="section-label mb-5 reveal">Insights</p>
+    <p class="section-label mb-5 reveal">{{ .Params.section_label }}</p>
     <h1 class="font-cormorant font-light text-white mb-4 reveal reveal-delay-1" style="font-size: clamp(3rem, 7vw, 5rem); line-height: 0.95;">
-      The Journal
+      {{ .Title }}
     </h1>
     <p class="font-cormorant italic text-mist-light reveal reveal-delay-2" style="font-size: 1.2rem;">
-      Thoughts on performance, psychology, and the art of wonder
+      {{ .Description }}
     </p>
     <div class="divider-gold mt-8 max-w-xs mx-auto reveal reveal-delay-3"></div>
   </div>
@@ -52,14 +52,14 @@
           {{ end }}
 
           <a href="{{ .RelPermalink }}" class="btn-ghost text-xs">
-            Read essay
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            {{ $.Params.read_button }}
+            {{ partial "icons/arrow-right" (dict "class" "w-3.5 h-3.5") }}
           </a>
         </div>
       </div>
     </article>
     {{ else }}
-    <p class="font-inter text-mist text-center py-16">No posts yet. Check back soon.</p>
+    <p class="font-inter text-mist text-center py-16">{{ .Params.empty_state }}</p>
     {{ end }}
   </div>
 </section>

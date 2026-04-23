@@ -5,12 +5,12 @@
   <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(74,29,150,0.2) 0%, transparent 70%);"></div>
   <div class="stars-bg"></div>
   <div class="max-w-4xl mx-auto relative z-10 text-center">
-    <p class="section-label mb-5 reveal">The Mentalist</p>
+    <p class="section-label mb-5 reveal">{{ .Params.section_label }}</p>
     <h1 class="font-cormorant font-light text-white mb-6 reveal reveal-delay-1" style="font-size: clamp(3rem, 7vw, 5.5rem); line-height: 0.95; letter-spacing: -0.02em;">
       About Victor
     </h1>
     <div class="ornament reveal reveal-delay-2">
-      <span class="font-cormorant italic text-gold opacity-50" style="font-size: 1.5rem;">&#10022;</span>
+      <span class="font-cormorant not-italic text-gold opacity-50" style="font-size: 1.5rem;">&#10022;</span>
     </div>
   </div>
 </section>
@@ -31,9 +31,7 @@
           <!-- Placeholder image area -->
           <div class="w-full h-full flex flex-col items-center justify-center" style="background: linear-gradient(160deg, #151523 0%, #0d0d1a 100%); border: 1px solid rgba(255,255,255,0.05);">
             <div style="width: 80px; height: 80px; border: 1px solid rgba(212,160,23,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(212,160,23,0.4)" stroke-width="1">
-                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/>
-              </svg>
+              {{ partial "icons/user" (dict "class" "w-9 h-9") }}
             </div>
             <p class="font-inter text-xs tracking-widest uppercase" style="color: rgba(212,160,23,0.3);">Headshot</p>
           </div>
@@ -64,32 +62,20 @@
     <div class="text-center mb-16">
       <p class="section-label mb-4 reveal">Philosophy</p>
       <h2 class="font-cormorant font-light text-white reveal reveal-delay-1" style="font-size: clamp(2rem, 4vw, 3rem);">
-        The art of genuine astonishment
+        {{ .Params.philosophy_heading }}
       </h2>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="text-center reveal">
+      {{ range $i, $p := hugo.Data.philosophy }}
+      <div class="text-center reveal{{ if gt $i 0 }} reveal-delay-{{ mul $i 2 }}{{ end }}">
         <div class="w-14 h-14 flex items-center justify-center mx-auto mb-5" style="border: 1px solid rgba(212,160,23,0.2); background: rgba(74,29,150,0.15);">
-          <span style="font-size: 1.6rem;">🧠</span>
+          <span style="font-size: 1.6rem;">{{ $p.icon }}</span>
         </div>
-        <h3 class="font-cormorant text-xl font-light text-white mb-3">Psychology First</h3>
-        <p class="font-inter text-sm text-mist leading-relaxed">Every effect begins with a deep understanding of how humans perceive, remember, and interpret the world around them.</p>
+        <h3 class="font-cormorant text-xl font-light text-white mb-3">{{ $p.title }}</h3>
+        <p class="font-inter text-sm text-mist leading-relaxed">{{ $p.body }}</p>
       </div>
-      <div class="text-center reveal reveal-delay-2">
-        <div class="w-14 h-14 flex items-center justify-center mx-auto mb-5" style="border: 1px solid rgba(212,160,23,0.2); background: rgba(74,29,150,0.15);">
-          <span style="font-size: 1.6rem;">✨</span>
-        </div>
-        <h3 class="font-cormorant text-xl font-light text-white mb-3">Crafted Moments</h3>
-        <p class="font-inter text-sm text-mist leading-relaxed">Nothing is left to chance. Each performance is choreographed to move audiences through a precise emotional arc — from curiosity to wonder to disbelief.</p>
-      </div>
-      <div class="text-center reveal reveal-delay-3">
-        <div class="w-14 h-14 flex items-center justify-center mx-auto mb-5" style="border: 1px solid rgba(212,160,23,0.2); background: rgba(74,29,150,0.15);">
-          <span style="font-size: 1.6rem;">🤝</span>
-        </div>
-        <h3 class="font-cormorant text-xl font-light text-white mb-3">Human Connection</h3>
-        <p class="font-inter text-sm text-mist leading-relaxed">The greatest illusion is the bond between performer and audience. Victor works to make every individual feel seen, chosen, and part of something rare.</p>
-      </div>
+      {{ end }}
     </div>
   </div>
   <div class="divider-gold absolute bottom-0 left-0 right-0"></div>
@@ -99,7 +85,7 @@
 <section class="py-24 px-6 text-center">
   <div class="max-w-2xl mx-auto">
     <p class="font-cormorant italic text-mist-light mb-8 reveal" style="font-size: 1.4rem;">
-      &ldquo;I don't perform miracles. I simply reveal the ones that were already there.&rdquo;
+      &ldquo;{{ .Params.closing_quote }}&rdquo;
     </p>
     <p class="font-cormorant text-right text-gold reveal reveal-delay-1" style="font-size: 1.1rem;">— Victor Ashveil</p>
     <div class="mt-12 reveal reveal-delay-2">

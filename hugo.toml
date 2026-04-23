@@ -17,15 +17,17 @@ enableRobotsTXT = true
     noClasses = false
 
 [params]
-  description = "Victor Ashveil — Master Mentalist & Illusionist. Extraordinary performances for corporate events, private gatherings, and stage shows."
+  description = "Victor Ashveil — Mentalist & Illusionist. Extraordinary performances for corporate events, private gatherings, and stage shows."
   tagline = "Beyond the Veil of Possibility"
-  hero_subtitle = "Master Mentalist & Illusionist performing worldwide since 2001"
+  author              = "Victor Ashveil"
+  header_subtitle     = "Mentalist & Illusionist"
+  nav_cta_label       = "Book Victor"
+  footer_description  = "Mentalist & Illusionist. Crafting extraordinary moments at the intersection of psychology, performance, and mystery."
+  footer_availability = "Available for corporate events, private parties, stage shows & virtual performances."
+  footer_cta_label    = "Book an Inquiry"
+  footer_tagline      = "The Art of Impossibility"
   email = "booking@victorashveil.com"
-  phone = "+1 (555) 000-0000"
   formspree_id = "YOUR_FORMSPREE_ID"
-  social_instagram = "https://instagram.com/"
-  social_facebook = "https://facebook.com/"
-  social_youtube = "https://youtube.com/"
 
 [menu]
   [[menu.main]]
@@ -40,10 +42,10 @@ enableRobotsTXT = true
     name = "Shows"
     url = "/shows/"
     weight = 3
-  [[menu.main]]
-    name = "Blog"
-    url = "/blog/"
-    weight = 4
+  # [[menu.main]]
+  #   name = "Blog"
+  #   url = "/blog/"
+  #   weight = 4
   [[menu.main]]
     name = "Contact"
     url = "/contact/"
