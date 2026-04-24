@@ -3,7 +3,6 @@ backend:
   repo: abyss/hugo.abyss.dev
   branch: main
 
-
 media_folder: static/images/uploads
 public_folder: /images/uploads
 
@@ -11,6 +10,7 @@ site_url: https://hugo.abyss.dev
 display_url: https://hugo.abyss.dev
 
 collections:
+
   # ── Blog Posts ──
   - name: posts
     label: Blog Posts
@@ -18,9 +18,6 @@ collections:
     folder: content/blog
     create: true
     slug: "{{slug}}"
-    filter:
-      field: _index
-      value: false
     fields:
       - label: Title
         name: title
@@ -59,9 +56,6 @@ collections:
     folder: content/shows
     create: true
     slug: "{{slug}}"
-    filter:
-      field: _index
-      value: false
     fields:
       - label: Title
         name: title
@@ -103,76 +97,149 @@ collections:
         widget: markdown
         required: true
 
+  # ── Pages ──
+  - name: pages
+    label: Pages
+    files:
+      - label: About
+        name: about
+        file: content/about.md
+        fields:
+          - label: Section Label
+            name: section_label
+            widget: string
+            hint: Small uppercase label shown above the heading
+          - label: Philosophy Heading
+            name: philosophy_heading
+            widget: string
+          - label: Closing Quote
+            name: closing_quote
+            widget: text
+            hint: Attributed to Victor — shown at the bottom of the page
+          - label: Biography
+            name: body
+            widget: markdown
+
+      - label: Contact
+        name: contact
+        file: content/contact.md
+        fields:
+          - label: Page Title
+            name: title
+            widget: string
+          - label: Meta Description
+            name: description
+            widget: text
+            required: false
+          - label: Section Label
+            name: section_label
+            widget: string
+          - label: Hero Subtitle
+            name: subtitle
+            widget: string
+          - label: Lead Time Label
+            name: lead_time_label
+            widget: string
+          - label: Reply Note
+            name: reply_note
+            widget: text
+            hint: Shown beneath the form submit button
+          - label: Sidebar Body
+            name: body
+            widget: markdown
+            hint: Shown in the contact sidebar alongside the form
+
+  # ── Copy Chunks ──
+  - name: chunks
+    label: Copy Chunks
+    label_singular: Copy Chunk
+    files:
+      - label: Homepage — Availability CTA
+        name: cta-availability
+        file: content/chunks/cta-availability.md
+        fields:
+          - label: Body
+            name: body
+            widget: markdown
+      - label: Shows — Bespoke Engagements
+        name: bespoke-body
+        file: content/chunks/bespoke-body.md
+        fields:
+          - label: Body
+            name: body
+            widget: markdown
+      - label: Contact — Lead Time
+        name: lead-time
+        file: content/chunks/lead-time.md
+        fields:
+          - label: Body
+            name: body
+            widget: markdown
+
   # ── Testimonials ──
   - name: testimonials
     label: Testimonials
     label_singular: Testimonial
-    folder: content/testimonials
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - label: Name
-        name: name
-        widget: string
-        required: true
-      - label: Title / Role
-        name: title
-        widget: string
-        required: false
-        hint: e.g. Head of Events
-      - label: Company / Organisation
-        name: company
-        widget: string
-        required: false
-      - label: Quote
-        name: quote
-        widget: text
-        required: true
-      - label: Display Order
-        name: weight
-        widget: number
-        default: 10
-        required: false
+    files:
+      - label: Testimonials
+        name: testimonials
+        file: data/testimonials.yaml
+        fields:
+          - label: Testimonials
+            name: items
+            widget: list
+            fields:
+              - label: Quote
+                name: quote
+                widget: text
+                required: true
+              - label: Name
+                name: name
+                widget: string
+                required: true
+              - label: Role
+                name: role
+                widget: string
+                required: false
+
+  # ── Philosophy ──
+  - name: philosophy
+    label: Philosophy Pillars
+    files:
+      - label: Philosophy Pillars
+        name: philosophy
+        file: data/philosophy.yaml
+        fields:
+          - label: Pillars
+            name: items
+            widget: list
+            fields:
+              - label: Icon (Emoji)
+                name: icon
+                widget: string
+              - label: Title
+                name: title
+                widget: string
+              - label: Body
+                name: body
+                widget: text
 
   # ── Site Settings ──
   - name: settings
     label: Site Settings
     files:
-      - label: General Settings
-        name: general
-        file: content/settings.md
+      - label: Social Links
+        name: social
+        file: data/social.yaml
         fields:
-          - label: Site Title
-            name: site_title
-            widget: string
-            default: Victor Ashveil
-          - label: Tagline
-            name: tagline
-            widget: string
-            default: Beyond the Veil of Possibility
-          - label: Hero Subtitle
-            name: hero_subtitle
-            widget: string
-            hint: Shown beneath the tagline on the home hero
-          - label: Contact Email
-            name: email
-            widget: string
-          - label: Contact Phone
-            name: phone
-            widget: string
-          - label: Formspree Form ID
-            name: formspree_id
-            widget: string
-            hint: The ID from your Formspree form URL
-          - label: Instagram URL
-            name: social_instagram
-            widget: string
-            required: false
-          - label: Facebook URL
-            name: social_facebook
-            widget: string
-            required: false
-          - label: YouTube URL
-            name: social_youtube
-            widget: string
-            required: false
+          - label: Social Links
+            name: items
+            widget: list
+            fields:
+              - label: Platform
+                name: name
+                widget: string
+                hint: e.g. instagram, facebook, youtube, linkedin, tiktok
+              - label: URL
+                name: url
+                widget: string
