@@ -17,16 +17,8 @@ enableRobotsTXT = true
     noClasses = false
 
 [params]
-  description = "Victor Ashveil — Mentalist & Illusionist. Extraordinary performances for corporate events, private gatherings, and stage shows."
-  tagline = "Beyond the Veil of Possibility"
-  author              = "Victor Ashveil"
-  header_subtitle     = "Mentalist & Illusionist"
-  nav_cta_label       = "Book Victor"
-  footer_description  = "Mentalist & Illusionist. Crafting extraordinary moments at the intersection of psychology, performance, and mystery."
-  footer_availability = "Available for corporate events, private parties, stage shows & virtual performances."
-  footer_cta_label    = "Book an Inquiry"
-  footer_tagline      = "The Art of Impossibility"
-  email = "booking@victorashveil.com"
+  description  = "Victor Ashveil — Mentalist & Illusionist. Extraordinary performances for corporate events, private gatherings, and stage shows."
+  email        = "booking@victorashveil.com"
   formspree_id = "YOUR_FORMSPREE_ID"
 
 [menu]

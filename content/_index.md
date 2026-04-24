@@ -1,13 +1,15 @@
 ---
 description: "Victor Ashveil is a mentalist and illusionist performing worldwide. Extraordinary experiences for corporate events, stage shows, private parties, and virtual performances."
-intro_label:          "The Experience"
-intro_heading:        "Where psychology meets"
-intro_heading_em:     "the inexplicable"
-shows_heading:        "Every occasion, reimagined"
+intro_label: "The Experience"
+intro_heading: "Where psychology meets"
+intro_heading_em: "the inexplicable"
+shows_section_label: "Performances"
+shows_heading: "Every occasion, reimagined"
+testimonials_section_label: "Testimonials"
 testimonials_heading: "What audiences say"
-cta_heading:          "Ready to create something"
-cta_heading_em:       "unforgettable?"
-cta_body:             "Victor books a limited number of performances each year to ensure every event receives his full creative attention. Enquire early to secure your date."
+availability_label: "Availability"
+cta_heading: "Ready to create something"
+cta_heading_em: "unforgettable?"
 ---
 
 For over two decades, Victor Ashveil has commanded stages and boardrooms alike, turning skeptics into believers through feats of psychological insight, memory mastery, and theatrical illusion. Not tricks — experiences that linger long after the evening ends.

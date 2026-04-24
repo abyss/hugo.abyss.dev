@@ -1,6 +1,7 @@
-- name: "instagram"
-  url: "https://instagram.com/"
-- name: "facebook"
-  url: "https://facebook.com/"
-- name: "youtube"
-  url: "https://youtube.com/"
+items:
+  - name: "instagram"
+    url: "https://instagram.com/"
+  - name: "facebook"
+    url: "https://facebook.com/"
+  - name: "linkedin"
+    url: "https://linkedin.com/"

@@ -1,9 +1,9 @@
 ---
 title: "Victor Ashveil"
 layout: "single"
-section_label:      "The Mentalist"
+section_label: "The Mentalist"
 philosophy_heading: "The art of genuine astonishment"
-closing_quote:      "I don't perform miracles. I simply reveal the ones that were already there."
+closing_quote: "I don't perform miracles. I simply reveal the ones that were already there."
 ---
 
 Victor Ashveil was born in Prague to a watchmaker father and a linguist mother — a childhood of precision mechanisms and the architecture of language that would come to define his craft. At fourteen, he stumbled upon a dog-eared copy of Dariel Fitzkee's *The Trick Brain* in a secondhand bookshop and stayed up three nights straight reading it cover to cover. He has barely slept since.
