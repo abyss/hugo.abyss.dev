@@ -11,11 +11,11 @@ display_url: https://hugo.abyss.dev
 
 collections:
 
-  # ── Blog Posts ──
+  # ── Journal Posts ──
   - name: posts
-    label: Blog Posts
-    label_singular: Blog Post
-    folder: content/blog
+    label: Journal Posts
+    label_singular: Journal Post
+    folder: content/journal
     create: true
     slug: "{{slug}}"
     fields:
@@ -38,7 +38,7 @@ collections:
         name: description
         widget: text
         required: false
-        hint: Short excerpt shown in blog listing and meta tags
+        hint: Short excerpt shown in journal listing and meta tags
       - label: Tags
         name: tags
         widget: list

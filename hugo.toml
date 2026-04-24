@@ -35,8 +35,8 @@ enableRobotsTXT = true
     url = "/shows/"
     weight = 3
   # [[menu.main]]
-  #   name = "Blog"
-  #   url = "/blog/"
+  #   name = "Journal"
+  #   url = "/journal/"
   #   weight = 4
   [[menu.main]]
     name = "Contact"
@@ -49,5 +49,5 @@ enableRobotsTXT = true
   section = ["HTML"]
 
 [permalinks]
-  blog = "/blog/:slug/"
+  journal = "/journal/:slug/"
   shows = "/shows/:slug/"
