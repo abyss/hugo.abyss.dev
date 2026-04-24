@@ -28,17 +28,6 @@
       <p class="font-cormorant italic text-mist-light reveal reveal-delay-3" style="font-size: 1.15rem;">{{ . }}</p>
       {{ end }}
 
-      <div class="flex items-center gap-4 mt-6 reveal reveal-delay-4">
-        <div class="w-8 h-8 flex items-center justify-center" style="background: rgba(74,29,150,0.3); border: 1px solid rgba(212,160,23,0.2);">
-          <span style="font-size: 0.75rem;">{{ hugo.Data.site.author_initials }}</span>
-        </div>
-        <div>
-          <p class="font-inter text-sm text-mist-light">{{ hugo.Data.site.author }}</p>
-          <time class="font-inter text-xs text-mist" datetime="{{ .Date.Format "2006-01-02" }}">
-            {{ .Date.Format "January 2, 2006" }}
-          </time>
-        </div>
-      </div>
     </div>
   </section>
 

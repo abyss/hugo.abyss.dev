@@ -21,17 +21,9 @@
   <div class="max-w-4xl mx-auto">
     {{ range .Pages }}
     <article class="group py-12 reveal" style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-      <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
-        <!-- Date column -->
-        <div class="flex-shrink-0 w-24 text-center md:text-right">
-          <time class="font-cormorant italic text-gold" style="font-size: 1.1rem;" datetime="{{ .Date.Format "2006-01-02" }}">
-            {{ .Date.Format "Jan 2" }}
-          </time>
-          <p class="font-inter text-xs text-mist mt-0.5">{{ .Date.Format "2006" }}</p>
-        </div>
-
+      <div>
         <!-- Content -->
-        <div class="flex-1">
+        <div>
           <!-- Tags -->
           {{ with .Params.tags }}
           <div class="flex flex-wrap gap-2 mb-3">

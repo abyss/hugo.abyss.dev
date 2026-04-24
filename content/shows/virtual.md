@@ -3,7 +3,6 @@ title: "Virtual Performances"
 description: "Live online mentalism and illusion for remote teams, virtual events, and global audiences"
 icon: "💻"
 duration: "30 – 60 minutes"
-price_range: "From £950"
 audience_size: "10 – 500+"
 weight: 4
 ---

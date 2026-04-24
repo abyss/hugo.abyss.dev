@@ -77,11 +77,6 @@ collections:
         widget: string
         required: false
         hint: e.g. 60–90 minutes
-      - label: Price Range
-        name: price_range
-        widget: string
-        required: false
-        hint: e.g. From £3,500
       - label: Audience Size
         name: audience_size
         widget: string

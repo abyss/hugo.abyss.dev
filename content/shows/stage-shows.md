@@ -3,7 +3,6 @@ title: "Stage Shows"
 description: "A full-evening theatrical production at the intersection of mentalism, illusion, and psychological theatre"
 icon: "🎭"
 duration: "90 – 120 minutes (two acts)"
-price_range: "From £8,500"
 audience_size: "100 – 1,000+"
 weight: 3
 ---

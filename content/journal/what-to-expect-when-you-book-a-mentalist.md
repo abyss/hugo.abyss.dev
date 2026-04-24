@@ -12,7 +12,7 @@ If you've never hired a mentalist before, the booking process can feel slightly 
 
 The first conversation is about understanding your event, not selling you a show. A good mentalist will want to know the nature of the occasion, the size and demographic of the audience, the venue layout, what comes before and after the performance in the running order, and what you're hoping guests will feel and remember. The more specific your answers, the more precisely the performance can be shaped.
 
-Don't worry if you're not sure what format you need. Part of the consultation process is helping you identify which type of performance best suits your event. Roving close-up work, a parlour show, and a full stage performance create very different experiences. Choosing the wrong format for your context is a common mistake — a good performer will steer you away from it.
+Don't worry if you're not sure what format you need. Part of the consultation process is helping you identify which type of performance best suits your event. Strolling close-up work, a parlour show, and a full stage performance create very different experiences. Choosing the wrong format for your context is a common mistake — a good performer will steer you away from it.
 
 ## Contracts and Logistics
 

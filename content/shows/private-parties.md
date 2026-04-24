@@ -3,7 +3,6 @@ title: "Private Parties"
 description: "Intimate close-up mentalism and table magic for milestone celebrations and exclusive gatherings"
 icon: "🥂"
 duration: "1–3 hours"
-price_range: "From £1,800"
 audience_size: "10 – 80"
 weight: 2
 ---
@@ -16,11 +15,11 @@ Victor's private party work is rooted in this intimacy. Moving through your even
 
 ### Formats
 
-**Roving Close-Up** — Victor circulates through your reception or dinner, spending fifteen minutes with each group. Guests are unaware of what to expect until it begins, which creates a cascade of wonder as word spreads through the room.
+**Strolling Close-Up** — Victor circulates through your reception or dinner, spending fifteen minutes with each group. Guests are unaware of what to expect until it begins, which creates a cascade of wonder as word spreads through the room.
 
 **Parlour Show** — A semi-formal seated performance for groups of up to forty, ideal as an after-dinner entertainment. Running thirty to forty-five minutes, this format brings the intimacy of close-up work to a larger audience without losing its personal quality.
 
-**Combination** — For longer events, Victor recommends opening the evening with roving work during drinks, then closing with a brief parlour set after dinner.
+**Combination** — For longer events, Victor recommends opening the evening with strolling work during drinks, then closing with a brief parlour set after dinner.
 
 ### Occasions
 

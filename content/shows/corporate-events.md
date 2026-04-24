@@ -3,7 +3,6 @@ title: "Corporate Events"
 description: "Psychological spectacle that transforms conferences, launches, and award evenings into unforgettable experiences"
 icon: "🏢"
 duration: "45–90 minutes"
-price_range: "From £3,500"
 audience_size: "20 – 500+"
 weight: 1
 ---
@@ -12,7 +11,7 @@ weight: 1
 
 Victor's corporate work is built on a single conviction: the most memorable business events are the ones that make attendees feel something. Not just engaged — genuinely astonished. That spark of wonder, shared collectively across a room of colleagues and clients, creates a bond that no keynote or team-building exercise can manufacture.
 
-His corporate programme is modular and fully adaptable. Whether he joins your event as an after-dinner headliner, a conference centrepiece, or a roving close-up performer during a reception, he shapes each appearance to complement your objectives and brand.
+His corporate programme is modular and fully adaptable. Whether he joins your event as an after-dinner headliner, a conference centrepiece, or a strolling close-up performer during a reception, he shapes each appearance to complement your objectives and brand.
 
 ### What to Expect
 
