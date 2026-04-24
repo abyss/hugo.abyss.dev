@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.tagline }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+<title>{{ if .IsHome }}{{ .Site.Title }} — {{ hugo.Data.site.tagline }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
 <!-- Open Graph -->
