@@ -3,9 +3,9 @@
     <div class="flex items-center justify-between h-20">
 
       <!-- Logo -->
-      <a href="/" class="flex flex-col leading-none group" aria-label="Victor Ashveil — Home">
+      <a href="/" class="flex flex-col leading-none group" aria-label="{{ .Site.Title }} — Home">
         <span class="font-cormorant text-2xl font-light tracking-[0.08em] text-white group-hover:text-gold-light transition-colors duration-300">{{ .Site.Title }}</span>
-        <span class="font-inter text-[10px] tracking-[0.3em] uppercase text-gold opacity-70 mt-0.5">{{ .Site.Params.header_subtitle }}</span>
+        <span class="font-inter text-[10px] tracking-[0.3em] uppercase text-gold opacity-70 mt-0.5">{{ hugo.Data.site.header_subtitle }}</span>
       </a>
 
       <!-- Desktop Nav -->
@@ -15,7 +15,7 @@
           {{ .Name }}
         </a>
         {{ end }}
-        <a href="/contact/" class="btn-primary text-xs py-2.5 px-6 ml-2">{{ .Site.Params.nav_cta_label }}</a>
+        <a href="/contact/" class="btn-primary text-xs py-2.5 px-6 ml-2">{{ hugo.Data.ui.nav_cta }}</a>
       </nav>
 
       <!-- Mobile hamburger -->
@@ -38,7 +38,7 @@
       {{ .Name }}
     </a>
     {{ end }}
-    <a href="/contact/" class="btn-primary mt-4">{{ .Site.Params.nav_cta_label }}</a>
+    <a href="/contact/" class="btn-primary mt-4">{{ hugo.Data.ui.nav_cta }}</a>
   </nav>
   <div class="absolute bottom-8 font-inter text-xs tracking-widest text-mist opacity-40">
     © {{ now.Year }} {{ .Site.Title }}

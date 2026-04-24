@@ -13,7 +13,7 @@
     <!-- Pre-title -->
     <div class="flex items-center justify-center gap-4 mb-8 opacity-0 animate-fade-in" style="animation-delay:0.2s; animation-fill-mode: forwards;">
       <span class="w-12 h-px" style="background: linear-gradient(90deg, transparent, rgba(212,160,23,0.5));"></span>
-      <span class="section-label">{{ .Site.Params.header_subtitle }}</span>
+      <span class="section-label">{{ hugo.Data.site.header_subtitle }}</span>
       <span class="w-12 h-px" style="background: linear-gradient(90deg, rgba(212,160,23,0.5), transparent);"></span>
     </div>
 
@@ -27,13 +27,13 @@
     <!-- Tagline -->
     <p class="font-cormorant font-light italic text-white mb-10 opacity-0 animate-fade-in"
        style="font-size: clamp(1.2rem, 2.5vw, 1.75rem); color: rgba(255,255,255,0.65); animation-delay: 0.7s; animation-fill-mode: forwards; letter-spacing: 0.02em;">
-      {{ .Site.Params.tagline }}
+      {{ hugo.Data.site.tagline }}
     </p>
 
     <!-- CTAs -->
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-in" style="animation-delay: 1s; animation-fill-mode: forwards;">
-      <a href="/contact/" class="btn-primary">Book a Performance</a>
-      <a href="/shows/" class="btn-outline">Explore Shows</a>
+      <a href="/contact/" class="btn-primary">{{ hugo.Data.ui.cta_home_book }}</a>
+      <a href="/shows/" class="btn-outline">{{ hugo.Data.ui.cta_home_shows }}</a>
     </div>
 
     <!-- Scroll indicator -->
@@ -59,7 +59,7 @@
     </div>
     <div class="mt-12 reveal reveal-delay-4">
       <a href="/about/" class="btn-ghost">
-        Discover Victor's story
+        {{ hugo.Data.ui.cta_about }}
         {{ partial "icons/arrow-right" (dict "class" "w-4 h-4") }}
       </a>
     </div>
@@ -70,14 +70,14 @@
 <section class="py-24 px-6" style="background: var(--bg-surface);">
   <div class="max-w-7xl mx-auto">
     <div class="text-center mb-16">
-      <p class="section-label mb-4 reveal">Performances</p>
+      <p class="section-label mb-4 reveal">{{ .Params.shows_section_label }}</p>
       <h2 class="font-cormorant font-light text-white reveal reveal-delay-1" style="font-size: clamp(2rem, 4vw, 3rem);">
         {{ .Params.shows_heading }}
       </h2>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {{ range first 3 (sort (where .Site.RegularPages "Section" "shows") "Params.weight") }}
+      {{ range first 3 (sort (.Site.GetPage "/shows").RegularPages "Params.weight") }}
       <article class="card-dark p-8 reveal{{ if gt .Params.weight 1 }} reveal-delay-{{ sub .Params.weight 1 }}{{ end }}">
         <div class="show-icon mb-6">{{ with .Params.icon }}{{ . }}{{ else }}✦{{ end }}</div>
         <h3 class="font-cormorant text-2xl font-light text-white mb-3">{{ .Title }}</h3>
@@ -85,7 +85,7 @@
         <p class="font-inter text-sm text-mist leading-relaxed mb-6">{{ . }}</p>
         {{ end }}
         <a href="{{ .RelPermalink }}" class="btn-ghost text-xs">
-          Learn more
+          {{ hugo.Data.ui.learn_more }}
           {{ partial "icons/arrow-right" (dict "class" "w-3.5 h-3.5") }}
         </a>
       </article>
@@ -93,7 +93,7 @@
     </div>
 
     <div class="text-center mt-10 reveal">
-      <a href="/shows/" class="btn-outline">View All Shows</a>
+      <a href="/shows/" class="btn-outline">{{ hugo.Data.ui.cta_home_all_shows }}</a>
     </div>
   </div>
 </section>
@@ -103,7 +103,7 @@
   <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(74,29,150,0.12) 0%, transparent 70%);"></div>
   <div class="max-w-7xl mx-auto relative z-10">
     <div class="text-center mb-16">
-      <p class="section-label mb-4 reveal">Testimonials</p>
+      <p class="section-label mb-4 reveal">{{ .Params.testimonials_section_label }}</p>
       <h2 class="font-cormorant font-light text-white reveal reveal-delay-1" style="font-size: clamp(2rem, 4vw, 3rem);">
         {{ .Params.testimonials_heading }}
       </h2>
@@ -132,16 +132,16 @@
   <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 50% 80% at 50% 100%, rgba(212,160,23,0.06) 0%, transparent 70%);"></div>
 
   <div class="max-w-3xl mx-auto text-center relative z-10">
-    <p class="section-label mb-6 reveal">Availability</p>
+    <p class="section-label mb-6 reveal">{{ .Params.availability_label }}</p>
     <h2 class="font-cormorant font-light text-white mb-6 reveal reveal-delay-1" style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.05;">
       {{ .Params.cta_heading }}<br><em class="text-gold-gradient">{{ .Params.cta_heading_em }}</em>
     </h2>
-    <p class="font-inter text-base text-mist mb-10 reveal reveal-delay-2" style="max-width: 480px; margin-left: auto; margin-right: auto;">
-      {{ .Params.cta_body }}
-    </p>
+    <div class="font-inter text-base text-mist mb-10 reveal reveal-delay-2" style="max-width: 480px; margin-left: auto; margin-right: auto;">
+      {{ with .Site.GetPage "/chunks/cta-availability" }}{{ .Content }}{{ end }}
+    </div>
     <div class="flex flex-col sm:flex-row gap-4 justify-center reveal reveal-delay-3">
-      <a href="/contact/" class="btn-primary">Book Victor</a>
-      <a href="/about/" class="btn-outline">Learn More</a>
+      <a href="/contact/" class="btn-primary">{{ hugo.Data.ui.cta_book }}</a>
+      <a href="/about/" class="btn-outline">{{ hugo.Data.ui.learn_more }}</a>
     </div>
   </div>
   <div class="divider-gold absolute bottom-0 left-0 right-0"></div>

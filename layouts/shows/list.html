@@ -7,7 +7,7 @@
   <div class="max-w-4xl mx-auto relative z-10 text-center">
     <p class="section-label mb-5 reveal">{{ .Params.section_label }}</p>
     <h1 class="font-cormorant font-light text-white mb-4 reveal reveal-delay-1" style="font-size: clamp(3rem, 7vw, 5rem); line-height: 0.95;">
-      The Shows
+      {{ .Title }}
     </h1>
     <p class="font-cormorant italic text-mist-light reveal reveal-delay-2" style="font-size: 1.25rem;">
       {{ .Description }}
@@ -51,7 +51,7 @@
           </div>
 
           <a href="{{ .RelPermalink }}" class="btn-outline text-xs py-2.5 px-5">
-            Show Details
+            {{ hugo.Data.ui.cta_shows_entry }}
             {{ partial "icons/arrow-right" (dict "class" "w-3.5 h-3.5") }}
           </a>
         </div>
@@ -72,10 +72,10 @@
     <h2 class="font-cormorant font-light text-white mb-6 reveal reveal-delay-1" style="font-size: clamp(2rem, 4vw, 3rem);">
       {{ .Params.bespoke_heading }}
     </h2>
-    <p class="font-inter text-sm text-mist mb-8 reveal reveal-delay-2">
-      {{ .Params.bespoke_body }}
-    </p>
-    <a href="/contact/" class="btn-primary reveal reveal-delay-3">Discuss Your Vision</a>
+    <div class="font-inter text-sm text-mist mb-8 reveal reveal-delay-2">
+      {{ with .Site.GetPage "/chunks/bespoke-body" }}{{ .Content }}{{ end }}
+    </div>
+    <a href="/contact/" class="btn-primary reveal reveal-delay-3">{{ hugo.Data.ui.cta_shows_bespoke }}</a>
   </div>
   <div class="divider-gold"></div>
 </section>

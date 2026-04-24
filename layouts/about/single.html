@@ -43,7 +43,7 @@
 
       <!-- Bio text -->
       <div class="reveal reveal-delay-2">
-        <p class="section-label mb-4">Biography</p>
+        <p class="section-label mb-4">{{ hugo.Data.ui.biography_label }}</p>
         <h2 class="font-cormorant font-light text-white mb-6" style="font-size: clamp(1.8rem, 3vw, 2.75rem); line-height: 1.1;">
           {{ .Title }}
         </h2>
@@ -60,7 +60,7 @@
   <div class="divider-gold absolute top-0 left-0 right-0"></div>
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-16">
-      <p class="section-label mb-4 reveal">Philosophy</p>
+      <p class="section-label mb-4 reveal">{{ hugo.Data.ui.philosophy_label }}</p>
       <h2 class="font-cormorant font-light text-white reveal reveal-delay-1" style="font-size: clamp(2rem, 4vw, 3rem);">
         {{ .Params.philosophy_heading }}
       </h2>
@@ -87,9 +87,9 @@
     <p class="font-cormorant italic text-mist-light mb-8 reveal" style="font-size: 1.4rem;">
       &ldquo;{{ .Params.closing_quote }}&rdquo;
     </p>
-    <p class="font-cormorant text-right text-gold reveal reveal-delay-1" style="font-size: 1.1rem;">— Victor Ashveil</p>
+    <p class="font-cormorant text-right text-gold reveal reveal-delay-1" style="font-size: 1.1rem;">— {{ hugo.Data.site.author }}</p>
     <div class="mt-12 reveal reveal-delay-2">
-      <a href="/contact/" class="btn-primary">Book Victor</a>
+      <a href="/contact/" class="btn-primary">{{ hugo.Data.ui.cta_book }}</a>
     </div>
   </div>
 </section>

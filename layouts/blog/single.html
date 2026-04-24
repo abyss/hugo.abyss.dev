@@ -8,7 +8,7 @@
     <div class="max-w-3xl mx-auto relative z-10">
       <a href="/blog/" class="inline-flex items-center gap-2 font-inter text-xs tracking-widest uppercase text-mist hover:text-gold-light transition-colors duration-200 mb-8 reveal">
         {{ partial "icons/arrow-left" (dict "class" "w-3.5 h-3.5") }}
-        The Journal
+        {{ hugo.Data.ui.nav_journal_entry_section }}
       </a>
 
       <!-- Tags -->
@@ -30,10 +30,10 @@
 
       <div class="flex items-center gap-4 mt-6 reveal reveal-delay-4">
         <div class="w-8 h-8 flex items-center justify-center" style="background: rgba(74,29,150,0.3); border: 1px solid rgba(212,160,23,0.2);">
-          <span style="font-size: 0.75rem;">VA</span>
+          <span style="font-size: 0.75rem;">{{ hugo.Data.site.author_initials }}</span>
         </div>
         <div>
-          <p class="font-inter text-sm text-mist-light">{{ .Site.Params.author }}</p>
+          <p class="font-inter text-sm text-mist-light">{{ hugo.Data.site.author }}</p>
           <time class="font-inter text-xs text-mist" datetime="{{ .Date.Format "2006-01-02" }}">
             {{ .Date.Format "January 2, 2006" }}
           </time>
@@ -55,9 +55,9 @@
       <div class="mt-16 pt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6" style="border-top: 1px solid rgba(255,255,255,0.06);">
         <a href="/blog/" class="btn-ghost text-xs">
           {{ partial "icons/arrow-left" (dict "class" "w-3.5 h-3.5") }}
-          Back to Journal
+          {{ hugo.Data.ui.nav_journal_entry_back }}
         </a>
-        <a href="/contact/" class="btn-outline text-xs py-2.5 px-5">Book Victor</a>
+        <a href="/contact/" class="btn-outline text-xs py-2.5 px-5">{{ hugo.Data.ui.cta_book }}</a>
       </div>
     </div>
   </section>

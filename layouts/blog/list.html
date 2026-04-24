@@ -52,14 +52,14 @@
           {{ end }}
 
           <a href="{{ .RelPermalink }}" class="btn-ghost text-xs">
-            {{ $.Params.read_button }}
+            {{ hugo.Data.ui.read_button }}
             {{ partial "icons/arrow-right" (dict "class" "w-3.5 h-3.5") }}
           </a>
         </div>
       </div>
     </article>
     {{ else }}
-    <p class="font-inter text-mist text-center py-16">{{ .Params.empty_state }}</p>
+    <p class="font-inter text-mist text-center py-16">{{ hugo.Data.ui.empty_state }}</p>
     {{ end }}
   </div>
 </section>
