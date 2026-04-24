@@ -2,8 +2,6 @@
 title: "Victor Ashveil"
 layout: "single"
 section_label: "The Mentalist"
-biography_label: "Biography"
-philosophy_label: "Philosophy"
 philosophy_heading: "The art of genuine astonishment"
 closing_quote: "I don't perform miracles. I simply reveal the ones that were already there."
 ---

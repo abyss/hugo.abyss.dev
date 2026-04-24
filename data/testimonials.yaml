@@ -1,11 +1,12 @@
-- quote: "Victor had our entire executive team convinced he had read their minds. Three months later people are still talking about it."
-  name: "Sarah Mitchell"
-  role: "Head of Events, Meridian Capital"
+items:
+  - quote: "Victor had our entire executive team convinced he had read their minds. Three months later people are still talking about it."
+    name: "Sarah Mitchell"
+    role: "Head of Events, Meridian Capital"
 
-- quote: "I've seen dozens of performers. Victor is in a category of his own — the intimacy he creates with five hundred strangers is genuinely extraordinary."
-  name: "James Thornton"
-  role: "Festival Director, The Arthouse Series"
+  - quote: "I've seen dozens of performers. Victor is in a category of his own — the intimacy he creates with five hundred strangers is genuinely extraordinary."
+    name: "James Thornton"
+    role: "Festival Director, The Arthouse Series"
 
-- quote: "He knew things about our guests that he simply could not have known. Elegant, intelligent, and utterly baffling. The perfect addition to our evening."
-  name: "Elena Voss"
-  role: "Private Client, Vienna"
+  - quote: "He knew things about our guests that he simply could not have known. Elegant, intelligent, and utterly baffling. The perfect addition to our evening."
+    name: "Elena Voss"
+    role: "Private Client, Vienna"

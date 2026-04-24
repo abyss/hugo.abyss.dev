@@ -132,9 +132,6 @@ collections:
           - label: Hero Subtitle
             name: subtitle
             widget: string
-          - label: Lead Time Label
-            name: lead_time_label
-            widget: string
           - label: Reply Note
             name: reply_note
             widget: text
@@ -144,37 +141,53 @@ collections:
             widget: markdown
             hint: Shown in the contact sidebar alongside the form
 
-  # ── Copy Chunks ──
+  # ── Content Blocks ──
   - name: chunks
-    label: Copy Chunks
-    label_singular: Copy Chunk
+    label: Content Blocks
     files:
       - label: Homepage — Availability CTA
         name: cta-availability
         file: content/chunks/cta-availability.md
         fields:
-          - label: Body
-            name: body
-            widget: markdown
-      - label: Shows — Bespoke Engagements
-        name: bespoke-body
-        file: content/chunks/bespoke-body.md
-        fields:
-          - label: Body
-            name: body
-            widget: markdown
-      - label: Contact — Lead Time
-        name: lead-time
-        file: content/chunks/lead-time.md
-        fields:
+          - label: Heading
+            name: heading
+            widget: string
+          - label: Heading Emphasis
+            name: heading_em
+            widget: string
+            hint: The italicised second line of the heading
           - label: Body
             name: body
             widget: markdown
 
-  # ── Testimonials ──
-  - name: testimonials
-    label: Testimonials
-    label_singular: Testimonial
+      - label: Shows — Bespoke Engagements
+        name: bespoke-body
+        file: content/chunks/bespoke-body.md
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Heading
+            name: heading
+            widget: string
+          - label: Body
+            name: body
+            widget: markdown
+
+      - label: Contact — Lead Time
+        name: lead-time
+        file: content/chunks/lead-time.md
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Body
+            name: body
+            widget: markdown
+
+  # ── Data ──
+  - name: data
+    label: Data
     files:
       - label: Testimonials
         name: testimonials
@@ -197,10 +210,6 @@ collections:
                 widget: string
                 required: false
 
-  # ── Philosophy ──
-  - name: philosophy
-    label: Philosophy Pillars
-    files:
       - label: Philosophy Pillars
         name: philosophy
         file: data/philosophy.yaml
@@ -219,10 +228,6 @@ collections:
                 name: body
                 widget: text
 
-  # ── Site Settings ──
-  - name: settings
-    label: Site Settings
-    files:
       - label: Social Links
         name: social
         file: data/social.yaml

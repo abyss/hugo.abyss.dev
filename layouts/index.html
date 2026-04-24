@@ -110,7 +110,7 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {{ range $i, $t := hugo.Data.testimonials }}
+      {{ range $i, $t := hugo.Data.testimonials.items }}
       <blockquote class="card-dark p-8 flex flex-col reveal{{ if gt $i 0 }} reveal-delay-{{ mul $i 2 }}{{ end }}">
         <div class="quote-mark mb-2">&ldquo;</div>
         <p class="font-cormorant text-xl font-light italic text-mist-light leading-relaxed flex-1 mb-6">
