@@ -4,7 +4,6 @@ description: "Enquire about booking Victor Ashveil for your event"
 layout: "single"
 section_label: "Get in Touch"
 subtitle: "Every extraordinary experience begins with a single conversation"
-lead_time_label: "Booking Lead Time"
 reply_note: "Replies are typically sent within 48 hours. All enquiries are treated with complete discretion."
 ---
 

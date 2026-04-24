@@ -1,19 +1,23 @@
-nav_cta: "Book Victor"
-biography_label: "Biography"
-philosophy_label: "Philosophy"
-read_button: "Read essay"
-empty_state: "No posts yet. Check back soon."
-footer_cta: "Book an Inquiry"
-cta_book: "Book Victor"
-cta_show_book: "Book This Show"
+# ── Home ──
 cta_home_book: "Book a Performance"
 cta_home_shows: "Explore Shows"
 cta_home_all_shows: "View All Shows"
-cta_shows_bespoke: "Discuss Your Vision"
-nav_journal_entry_back: "Back to Journal"
-nav_journal_entry_section: "The Journal"
-nav_show_entry_back: "All Shows"
-learn_more: "Learn more"
-cta_shows_entry: "Show Details"
-nav_show_all: "See All Shows"
 cta_about: "Discover Victor's story"
+
+# ── About ──
+biography_label: "Biography"
+philosophy_label: "Philosophy"
+cta_book: "Book Victor"
+
+# ── Shows ──
+cta_shows_entry: "Show Details"
+cta_shows_bespoke: "Discuss Your Vision"
+cta_show_book: "Book This Show"
+nav_show_entry_back: "All Shows"
+nav_show_all: "See All Shows"
+
+# ── Journal ──
+read_button: "Read essay"
+empty_state: "No posts yet. Check back soon."
+nav_journal_entry_section: "The Journal"
+nav_journal_entry_back: "Back to Journal"

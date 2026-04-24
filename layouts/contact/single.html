@@ -40,10 +40,12 @@
 
         <!-- Availability note -->
         <div class="p-5 reveal" style="background: var(--bg-elevated); border: 1px solid rgba(212,160,23,0.12); border-left: 2px solid rgba(212,160,23,0.4);">
-          <p class="font-inter text-xs tracking-widest uppercase text-gold mb-2">{{ .Params.lead_time_label }}</p>
+          {{ with .Site.GetPage "/chunks/lead-time" }}
+          <p class="font-inter text-xs tracking-widest uppercase text-gold mb-2">{{ .Title }}</p>
           <div class="font-inter text-sm text-mist leading-relaxed">
-            {{ with .Site.GetPage "/chunks/lead-time" }}{{ .Content }}{{ end }}
+            {{ .Content }}
           </div>
+          {{ end }}
         </div>
       </div>
 

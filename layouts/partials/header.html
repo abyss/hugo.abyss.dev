@@ -15,7 +15,7 @@
           {{ .Name }}
         </a>
         {{ end }}
-        <a href="/contact/" class="btn-primary text-xs py-2.5 px-6 ml-2">{{ hugo.Data.ui.nav_cta }}</a>
+        <a href="/contact/" class="btn-primary text-xs py-2.5 px-6 ml-2">{{ hugo.Data.site.nav_cta }}</a>
       </nav>
 
       <!-- Mobile hamburger -->
@@ -38,7 +38,7 @@
       {{ .Name }}
     </a>
     {{ end }}
-    <a href="/contact/" class="btn-primary mt-4">{{ hugo.Data.ui.nav_cta }}</a>
+    <a href="/contact/" class="btn-primary mt-4">{{ hugo.Data.site.nav_cta }}</a>
   </nav>
   <div class="absolute bottom-8 font-inter text-xs tracking-widest text-mist opacity-40">
     © {{ now.Year }} {{ .Site.Title }}

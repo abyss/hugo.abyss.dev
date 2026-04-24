@@ -1,8 +1,15 @@
+# ── Identity ──
 tagline: "Beyond the Veil of Possibility"
 author: "Victor Ashveil"
+
+# ── Header ──
 header_subtitle: "Mentalist & Illusionist"
+nav_cta: "Book Victor"
+
+# ── Footer ──
 footer_description: "Mentalist & Illusionist. Crafting extraordinary moments at the intersection of psychology, performance, and mystery."
 footer_availability: "Available for corporate events, private parties, stage shows & virtual performances."
 footer_tagline: "The Art of Impossibility"
 footer_navigate_label: "Navigate"
 footer_inquiries_label: "Inquiries"
+footer_cta: "Book an Inquiry"

@@ -68,13 +68,15 @@
 <section class="py-24 px-6 text-center" style="background: var(--bg-surface);">
   <div class="divider-gold mb-0"></div>
   <div class="max-w-2xl mx-auto py-16">
-    <p class="section-label mb-4 reveal">{{ .Params.bespoke_label }}</p>
+    {{ with .Site.GetPage "/chunks/bespoke-body" }}
+    <p class="section-label mb-4 reveal">{{ .Title }}</p>
     <h2 class="font-cormorant font-light text-white mb-6 reveal reveal-delay-1" style="font-size: clamp(2rem, 4vw, 3rem);">
-      {{ .Params.bespoke_heading }}
+      {{ .Params.heading }}
     </h2>
     <div class="font-inter text-sm text-mist mb-8 reveal reveal-delay-2">
-      {{ with .Site.GetPage "/chunks/bespoke-body" }}{{ .Content }}{{ end }}
+      {{ .Content }}
     </div>
+    {{ end }}
     <a href="/contact/" class="btn-primary reveal reveal-delay-3">{{ hugo.Data.ui.cta_shows_bespoke }}</a>
   </div>
   <div class="divider-gold"></div>

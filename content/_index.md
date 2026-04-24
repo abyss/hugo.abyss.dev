@@ -7,9 +7,6 @@ shows_section_label: "Performances"
 shows_heading: "Every occasion, reimagined"
 testimonials_section_label: "Testimonials"
 testimonials_heading: "What audiences say"
-availability_label: "Availability"
-cta_heading: "Ready to create something"
-cta_heading_em: "unforgettable?"
 ---
 
 For over two decades, Victor Ashveil has commanded stages and boardrooms alike, turning skeptics into believers through feats of psychological insight, memory mastery, and theatrical illusion. Not tricks — experiences that linger long after the evening ends.
