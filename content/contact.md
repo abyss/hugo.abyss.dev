@@ -1,9 +1,8 @@
 ---
 title: "Book Victor"
-description: "Enquire about booking Victor Ashveil for your event"
+description: "Every extraordinary experience begins with a single conversation"
 layout: "single"
 section_label: "Get in Touch"
-subtitle: "Every extraordinary experience begins with a single conversation"
 reply_note: "Replies are typically sent within 48 hours. All enquiries are treated with complete discretion."
 ---
 

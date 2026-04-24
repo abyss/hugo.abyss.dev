@@ -1,18 +1,20 @@
 {{ define "main" }}
 
 <!-- Hero -->
-<section class="relative pt-40 pb-16 px-6 overflow-hidden">
+<section class="relative pt-40 pb-20 px-6 overflow-hidden">
   <div class="stars-bg"></div>
   <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(74,29,150,0.2) 0%, transparent 70%);"></div>
-  <div class="max-w-3xl mx-auto relative z-10 text-center">
+  <div class="max-w-4xl mx-auto relative z-10 text-center">
     <p class="section-label mb-5 reveal">{{ .Params.section_label }}</p>
     <h1 class="font-cormorant font-light text-white mb-4 reveal reveal-delay-1" style="font-size: clamp(3rem, 7vw, 5rem); line-height: 0.95;">
-      Book Victor
+      {{ .Title }}
     </h1>
-    <p class="font-cormorant italic text-mist-light reveal reveal-delay-2" style="font-size: 1.2rem;">
-      {{ .Params.subtitle }}
-    </p>
-    <div class="divider-gold mt-8 max-w-xs mx-auto reveal reveal-delay-3"></div>
+    {{ with .Description }}
+    <p class="font-cormorant italic text-mist-light reveal reveal-delay-2" style="font-size: 1.2rem;">{{ . }}</p>
+    {{ end }}
+    <div class="ornament mt-8 reveal reveal-delay-3">
+      <span class="font-cormorant not-italic text-gold opacity-50">&#10022;</span>
+    </div>
   </div>
 </section>
 

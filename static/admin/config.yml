@@ -129,9 +129,10 @@ collections:
           - label: Section Label
             name: section_label
             widget: string
-          - label: Hero Subtitle
-            name: subtitle
+          - label: Hero Description
+            name: description
             widget: string
+            hint: Italic line shown below the heading in the hero
           - label: Reply Note
             name: reply_note
             widget: text
