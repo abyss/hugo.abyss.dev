@@ -1,13 +1,13 @@
 backend:
   name: github
-  repo: abyss/hugo.abyss.dev
+  repo: abyss/victor.abyss.dev
   branch: main
 
 media_folder: static/images/uploads
 public_folder: /images/uploads
 
-site_url: https://hugo.abyss.dev
-display_url: https://hugo.abyss.dev
+site_url: https://victor.abyss.dev
+display_url: https://victor.abyss.dev
 
 collections:
 

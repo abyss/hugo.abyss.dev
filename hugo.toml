@@ -1,4 +1,4 @@
-baseURL = "https://hugo.abyss.dev/"
+baseURL = "https://victor.abyss.dev/"
 languageCode = "en-us"
 title = "Victor Ashveil"
 # Set to true in production (requires git history); keep false for non-git local dev
