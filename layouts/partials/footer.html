@@ -10,15 +10,16 @@
           <span class="font-cormorant text-3xl font-light tracking-wider text-white">{{ .Site.Title }}</span>
         </a>
         <p class="font-inter text-sm text-mist leading-relaxed mb-6" style="max-width: 280px;">
-          {{ .Site.Params.footer_description }}
+          {{ hugo.Data.site.footer_description }}
         </p>
         <!-- Social links -->
         <div class="flex items-center gap-4">
-          {{ range hugo.Data.social }}
+          {{ range hugo.Data.social.items }}
+          {{ $icon := resources.GetRemote (printf "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/%s.svg" .name) }}
           <a href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .name }}"
              class="w-9 h-9 flex items-center justify-center border transition-all duration-300 hover:border-gold-light hover:text-gold-light text-mist"
              style="border-color: rgba(255,255,255,0.12);">
-            {{ partial (printf "icons/%s.html" .name) (dict "class" "w-4 h-4") }}
+            {{ with $icon }}<span class="social-icon">{{ .Content | safeHTML }}</span>{{ end }}
           </a>
           {{ end }}
         </div>
@@ -26,7 +27,7 @@
 
       <!-- Quick links -->
       <div>
-        <h3 class="font-inter text-xs tracking-[0.25em] uppercase text-gold mb-5">Navigate</h3>
+        <h3 class="font-inter text-xs tracking-[0.25em] uppercase text-gold mb-5">{{ hugo.Data.site.footer_navigate_label }}</h3>
         <ul class="space-y-3">
           {{ range .Site.Menus.main }}
           <li>
@@ -38,10 +39,10 @@
 
       <!-- Contact / CTA -->
       <div>
-        <h3 class="font-inter text-xs tracking-[0.25em] uppercase text-gold mb-5">Inquiries</h3>
-        <p class="font-inter text-sm text-mist mb-3">{{ .Site.Params.footer_availability }}</p>
+        <h3 class="font-inter text-xs tracking-[0.25em] uppercase text-gold mb-5">{{ hugo.Data.site.footer_inquiries_label }}</h3>
+        <p class="font-inter text-sm text-mist mb-3">{{ hugo.Data.site.footer_availability }}</p>
         <a href="mailto:{{ .Site.Params.email }}" class="font-inter text-sm text-mist-light hover:text-gold-light transition-colors duration-200 block mb-6">{{ .Site.Params.email }}</a>
-        <a href="/contact/" class="btn-outline text-xs py-2.5 px-5">{{ .Site.Params.footer_cta_label }}</a>
+        <a href="/contact/" class="btn-outline text-xs py-2.5 px-5">{{ hugo.Data.ui.footer_cta }}</a>
       </div>
 
     </div>
@@ -53,7 +54,7 @@
       </p>
       <div class="flex items-center gap-1 font-inter text-xs text-mist opacity-30">
         <span class="font-cormorant not-italic text-sm" style="color: rgba(212,160,23,0.4);">&#10022;</span>
-        <span class="tracking-widest uppercase mx-2">{{ .Site.Params.footer_tagline }}</span>
+        <span class="tracking-widest uppercase mx-2">{{ hugo.Data.site.footer_tagline }}</span>
         <span class="font-cormorant not-italic text-sm" style="color: rgba(212,160,23,0.4);">&#10022;</span>
       </div>
     </div>
